@@ -2,7 +2,6 @@ package selenium.Page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -22,18 +21,23 @@ public class App extends BasePage {
         driver.manage().window().maximize();
         driver.findElement(By.linkText("企业登录")).click();
         //突破扫码
-        driver.manage().addCookie(new Cookie("wwrtx.refid","40673232492722270"));
-        driver.manage().addCookie(new Cookie("wwrtx.sid","HGbRYt3NPhPCJmUx43xqdVXz71qZm7iZ5gaJKVw4f70DfFAC-pynXWuBn1ksZbNi"));
+        driver.manage().addCookie(new Cookie("wwrtx.refid","4168052081771425"));
+        driver.manage().addCookie(new Cookie("wwrtx.sid","HGbRYt3NPhPCJmUx43xqdVHCEqMQed2BIfWuHj1nNN8_qDW08iMRzs3tIiv5p9Zj"));
         driver.navigate().refresh();
         return this;
     }
     public ContactPage toContact(){
         //进入通讯录入口
+        findElement(By.xpath("//span[contains(.,'通讯录')]")).click();
         return new ContactPage();
     }
     public ContactPage toMemberAdd(){
         //进入添加成员入口
         findElement(By.linkText("添加成员")).click();
         return new ContactPage();
+    }
+    public void quit() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.quit();
     }
 }

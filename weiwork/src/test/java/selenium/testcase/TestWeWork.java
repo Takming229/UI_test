@@ -1,5 +1,6 @@
 package selenium.testcase;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -16,8 +17,23 @@ public class TestWeWork {
     }
     @Test
     public void TestStart(){
-        String iPhone="1810000000";
+        String iPhone="18102523541";
         app.toMemberAdd().add(iPhone,iPhone,iPhone);//App类初始后调用toMemberAdd方法点击Add（“添加成员”进入新的Po）
 
     }
+    @Test
+    public void testDelete(){
+        String iPhone="18102523548";
+        app.toMemberAdd().add(iPhone,iPhone,iPhone).delete(iPhone);//添加并删除成员
+    }
+@Test
+//清除数据
+    public void TestClear(){
+        String Iphone="18102523541";
+        app.toContact().delete(Iphone);
+}
+@AfterClass
+    public void afterClass() throws InterruptedException {
+        app.quit();//定时退出浏览器
+}
 }
