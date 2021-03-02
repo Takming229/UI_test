@@ -18,6 +18,7 @@ public class App extends BasePage {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(url);
+
         driver.manage().window().maximize();
         driver.findElement(By.linkText("企业登录")).click();
         //突破扫码
