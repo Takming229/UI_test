@@ -2,9 +2,12 @@ package selenium.Page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class ContactPage extends BasePage{
     //添加功能
@@ -32,6 +35,22 @@ public class ContactPage extends BasePage{
         findElement(By.linkText("删除")).click();
         findElement(By.linkText("确认")).click();
         findElement(By.id("clearMemberSearchInput")).click();
+        return this;
+    }
+    //选择删除成员
+    public ContactPage deleteCurrentPage() throws InterruptedException {
+        waitCickBle(500,By.cssSelector(".ww_checkbox"));//等待点击
+        List<WebElement> elements=driver.findElements(By.cssSelector(".ww_checkbox"));
+        for (int i=1;i<elements.size();i++){
+            elements.get(i).click();
+            try{
+                Thread.sleep(500);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        findElement(By.linkText("删除")).click();
+        findElement(By.linkText("确认")).click();
         return this;
     }
     //列表查询功能

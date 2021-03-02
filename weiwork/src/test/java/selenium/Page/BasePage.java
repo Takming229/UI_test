@@ -13,7 +13,7 @@ public class BasePage {
        return driver.findElement(by);
     }
     public void waitCickBle(int timeout ,By by){
-        //等待并检查元素，性能影响比较小，可忽略
+        //等待并检查元素可点击，性能影响比较小，可忽略
         new WebDriverWait(driver,timeout).until(ExpectedConditions.elementToBeClickable(by));
     }
 }

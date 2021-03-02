@@ -29,11 +29,16 @@ public class TestWeWork {
 @Test
 //清除数据
     public void TestClear(){
-        String Iphone="18102523541";
+        String Iphone="181025235412";
         app.toContact().delete(Iphone);
 }
-@AfterClass
-    public void afterClass() throws InterruptedException {
-        app.quit();//定时退出浏览器
+@Test
+//通讯录列表选择删除
+    public void deleteCurrentPage() throws InterruptedException {
+        app.toContact().deleteCurrentPage();
+
 }
+
+
+
 }

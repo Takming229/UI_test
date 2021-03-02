@@ -23,7 +23,7 @@ public class App extends BasePage {
         driver.findElement(By.linkText("企业登录")).click();
         //突破扫码
         driver.manage().addCookie(new Cookie("wwrtx.refid","4168052081771425"));
-        driver.manage().addCookie(new Cookie("wwrtx.sid","HGbRYt3NPhPCJmUx43xqdVHCEqMQed2BIfWuHj1nNN8_qDW08iMRzs3tIiv5p9Zj"));
+        driver.manage().addCookie(new Cookie("wwrtx.sid","HGbRYt3NPhPCJmUx43xqda9G1hMdJDfPYMpgQDohN9pzEURmfal-euOz5l0uE-GL"));
         driver.navigate().refresh();
         return this;
     }
