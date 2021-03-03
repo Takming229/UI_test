@@ -53,6 +53,19 @@ public class ContactPage extends BasePage{
         findElement(By.linkText("确认")).click();
         return this;
     }
+
+    //导入
+    public ContactPage improtFile(String path){
+        findElement(By.id("1688850072908788_anchor")).click();
+        findElement(By.xpath("//div[2]/a/div")).click();
+        findElement(By.linkText("文件导入")).click();
+        findElement(By.id("js_upload_file_input"),0).sendKeys(path);
+        //findElement(By.id("js_upload_file_input")).sendKeys("D:\\GitAPI\\通讯录批量导入模板.xlsx");
+        waitCickBle(50,By.id("submit_csv"));
+        findElement(By.id("submit_csv")).click();
+        findElement(By.linkText("前往查看")).click();
+        return this;
+    }
     //列表查询功能
     public void list(){
 

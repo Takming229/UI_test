@@ -16,14 +16,14 @@ public class App extends BasePage {
     public App loingwithcookie(){
         String url="https://work.weixin.qq.com/";
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         driver.get(url);
 
         driver.manage().window().maximize();
         driver.findElement(By.linkText("企业登录")).click();
         //突破扫码
         driver.manage().addCookie(new Cookie("wwrtx.refid","4168052081771425"));
-        driver.manage().addCookie(new Cookie("wwrtx.sid","HGbRYt3NPhPCJmUx43xqda9G1hMdJDfPYMpgQDohN9pzEURmfal-euOz5l0uE-GL"));
+        driver.manage().addCookie(new Cookie("wwrtx.sid","HGbRYt3NPhPCJmUx43xqdWYsKfQamvEx1PHutaWfsdrzLanzW5twiRepmaCWwW_-"));
         driver.navigate().refresh();
         return this;
     }

@@ -26,19 +26,22 @@ public class TestWeWork {
         String iPhone="18102523548";
         app.toMemberAdd().add(iPhone,iPhone,iPhone).delete(iPhone);//添加并删除成员
     }
-@Test
-//清除数据
+    @Test
+    //清除数据
     public void TestClear(){
         String Iphone="181025235412";
         app.toContact().delete(Iphone);
 }
-@Test
-//通讯录列表选择删除
+    @Test
+    //通讯录列表选择删除
     public void deleteCurrentPage() throws InterruptedException {
         app.toContact().deleteCurrentPage();
 
-}
+    }
 
-
-
+    @Test
+    //上传导入
+    public void importFile(){
+        app.toContact().improtFile("D:\\GitAPI\\通讯录批量导入模板.xlsx");
+    }
 }
