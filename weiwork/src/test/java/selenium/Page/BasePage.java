@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 //基础类，让所有类都继承这个类
 public class BasePage {
     public static WebDriver driver;
@@ -23,7 +22,6 @@ public class BasePage {
         //等待并检查元素可点击，性能影响比较小，可忽略
         new WebDriverWait(driver,timeout).until(ExpectedConditions.elementToBeClickable(by));
     }
-
     public void waitClickkable(By by){
         new WebDriverWait(driver,5).until(ExpectedConditions.elementToBeClickable(by));
     }

@@ -53,7 +53,6 @@ public class ContactPage extends BasePage{
         findElement(By.linkText("确认")).click();
         return this;
     }
-
     //导入
     public ContactPage improtFile(String path){
         findElement(By.id("1688850072908788_anchor")).click();

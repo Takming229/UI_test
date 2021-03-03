@@ -46,7 +46,6 @@ public class WorkTestTest {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
-
     driver.findElement(By.linkText("添加成员")).click();
     js.executeScript("window.scrollTo(0,185)");
     driver.findElement(By.cssSelector(".member_edit_cover > .member_edit_item_right")).click();
