@@ -14,6 +14,7 @@ public class App extends BasePage {
 
 
     public App loingwithcookie(){
+        System.setProperty("webdriver.chrome.driver", "D:\\UI_test\\weiwork\\src\\ChromeDriver\\chromedriver.exe");
         String url="https://work.weixin.qq.com/";
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
