@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     public static WebDriver driver;
     public WebElement findElement(By by){
-        waitClickkable(by);//元素操作前等待
-       return driver.findElement(by);
+       return findElement(by,5);
     }
     public WebElement findElement(By by,int timeout){
+        System.out.println(by);//打印步骤
         if (timeout>0){//元素是否需要等待使用
             waitCickBle(timeout,by);
         }

@@ -41,7 +41,13 @@ public class TestWeWork {
 
     @Test
     //上传导入
-    public void importFile(){
+    public void importfromFile(){
         app.toContact().improtFile("D:\\GitAPI\\通讯录批量导入模板.xlsx");
+    }
+    @Test
+    //群发消息
+    public void broadcast(){
+        app.tobroadcast().send("晴天","快递签收","你的快递到了",
+                "你的快递在前台","企业管理员");
     }
 }
