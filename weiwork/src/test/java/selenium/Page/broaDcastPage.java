@@ -3,6 +3,7 @@ package selenium.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class broaDcastPage extends BasePage {
@@ -29,5 +30,14 @@ public class broaDcastPage extends BasePage {
         findElement(By.linkText("发送")).click();
         findElement(By.linkText("确定")).click();
         return this;
+    }
+
+    public List<String> getSendMsg(){
+        findElement(By.linkText("已发送")).click();
+        final List<String> msg=new ArrayList<String>();
+        driver.findElements(By.cssSelector(".msg_history_msgList_td")).forEach(element ->{
+          msg.add(element.getText());//取出列表的所有元素
+        });
+        return msg;
     }
 }

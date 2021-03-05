@@ -6,7 +6,11 @@ import org.junit.Test;
 
 import selenium.Page.App;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.matchers.JUnitMatchers.hasItem;
 
 public class TestWeWork {
     public static App app;
@@ -47,7 +51,12 @@ public class TestWeWork {
     @Test
     //群发消息
     public void broadcast(){
-        app.tobroadcast().send("晴天","快递签收","你的快递到了",
-                "你的快递在前台","企业管理员");
+String title="你的快递到了";
+        List<String> sendmsg= app.tobroadcast().send("晴天",title,title+title,
+                "你的快递在前台","企业管理员").getSendMsg().subList(0,5);//取0到5的值
+        System.out.println(sendmsg);
+        assertThat(sendmsg,hasItem(title));
+
     }
+
 }
